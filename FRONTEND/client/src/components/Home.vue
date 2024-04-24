@@ -137,7 +137,7 @@
       </div>
     </div>
     <div class="col-12 col-sm-10 contain-product">
-      <h1 class="text-center mt-2" style="font-weight: 600">Sách mới</h1>
+      <!-- <h1 class="text-center mt-2" style="font-weight: 600">Sách mới</h1> -->
       <div class="container">
         <div class="row mt-n5">
           <div

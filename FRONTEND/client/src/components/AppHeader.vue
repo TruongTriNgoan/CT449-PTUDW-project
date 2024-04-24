@@ -119,11 +119,11 @@
                 <a class="nav-link" href="#">Sách</a>
               </li>
             </router-link>
-            <router-link :to="{ name: 'product' }" class="router-css">
+            <!-- <router-link :to="{ name: 'product' }" class="router-css">
               <li class="nav-item">
                 <a class="nav-link" href="#">Mượn sách</a>
               </li>
-            </router-link>
+            </router-link> -->
             <router-link :to="{ name: 'introduce' }" class="router-css">
               <li class="nav-item">
                 <a class="nav-link" href="#">Giới thiệu</a>
