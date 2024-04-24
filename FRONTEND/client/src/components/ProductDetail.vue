@@ -60,10 +60,10 @@
       </p>
 
       <div class="row">
-        <dt class="col-3">Thương hiệu:</dt>
+        <dt class="col-3">Nhà xuất bản:</dt>
         <dd class="col-9">{{ product.trademark }}</dd>
 
-        <dt class="col-3">Xuất xứ:</dt>
+        <dt class="col-3">Đơn vị phát hành:</dt>
         <dd class="col-9">{{ product.origin }}</dd>
       </div>
 

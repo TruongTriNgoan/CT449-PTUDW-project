@@ -99,7 +99,7 @@
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar brand -->
-          <a class="navbar-brand mt-2 mt-lg-0 d-none d-md-block" href="#">
+          <a class="navbar-brand mt-2 mt-lg-0 d-none d-md-block" href="/">
             <img
               src="https://img.lovepik.com/png/20231014/cartoon-brown-library-clipart-estate-zone-exterior_199009_wh1200.png"
               height="80"
