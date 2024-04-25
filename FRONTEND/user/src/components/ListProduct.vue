@@ -48,6 +48,7 @@
                 >
                   <div class="blog-grid-img position-relative">
                     <img
+                    style="height: 350px;"
                       alt="img"
                       :src="
                         'http://localhost:3000/uploads/' + product.productImg[0]

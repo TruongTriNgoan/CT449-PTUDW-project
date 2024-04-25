@@ -68,6 +68,25 @@ exports.update = async (req, res, next) => {
       });
     }
 
+    exports.findProductWithName = findByName;
+
+    // exports.findProductWithName = async (req, res, next) => {
+    //   try {
+    //     const nameProduct = req.params.nameproduct; // Lấy tên sản phẩm từ tham số đường dẫn
+    
+    //     // Tìm kiếm sản phẩm sử dụng biểu thức chính quy, tên sản phẩm hoặc mô tả
+    //     const productData = await Product.find({
+    //       $or: [
+    //         { productName: { $regex: `${nameProduct}`, $options: "i" } },
+    //         { productDes: { $regex: `${nameProduct}`, $options: "i" } },
+    //       ],
+    //     });
+    
+    //     res.status(200).json(productData);
+    //   } catch (err) {
+    //     next(new APIError(500, "Đã có lỗi xảy ra khi tìm kiếm sản phẩm theo tên"));
+    //   }
+    // };
     // Xác minh dữ liệu đầu vào sử dụng Joi
     // const schema = Joi.object({
     //   productName: Joi.string().max(255).required(),

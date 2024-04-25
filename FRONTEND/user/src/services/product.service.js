@@ -20,6 +20,9 @@ class ProductService {
   async delete(id) {
     return (await this.api.delete(`/${id}`)).data;
   }
+  async findProductWithName(name) {
+    return (await this.api.get(`/search/${name}`)).data;
+  }
 }
 
 export default new ProductService();

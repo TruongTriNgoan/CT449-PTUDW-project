@@ -6,31 +6,19 @@
       <div class="container-fluid">
         <!-- Toggle button -->
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
         <div id="contain-form" class="d-flex align-items-center">
           <!-- search -->
-          <!-- <form class="d-flex input-group w-auto me-2">
-            <input
-              type="search"
-              class="form-control rounded"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <span class="input-group-text border-0" id="search-addon">
+          <form class="d-flex input-group w-auto me-2" @submit.prevent="searchBooks">
+            <input v-model.trim="searchKeyword" type="search" class="form-control rounded"
+              placeholder="Nhập vào tên sách hoặc mô tả..." aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-outline-secondary">
               <i class="fas fa-search"></i>
-            </span>
-          </form> -->
+            </button>
+          </form>
           <!-- Icon -->
           <!-- cart -->
           <!-- <a class="text-reset me-3" href="#">
@@ -49,44 +37,24 @@
           </a> -->
 
           <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle button-user"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i
-                style="color: black; font-size: 18px"
-                class="fa-solid fa-user"
-              ></i>
+            <button class="btn btn-secondary dropdown-toggle button-user" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i style="color: black; font-size: 18px" class="fa-solid fa-user"></i>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <router-link
-                v-show="isLoggedIn"
-                :to="{
-                  name: 'profile',
-                }"
-                class="router-css router-li"
-              >
+              <router-link v-show="isLoggedIn" :to="{
+                name: 'profile',
+              }" class="router-css router-li">
                 <li>
                   <a class="dropdown-item" href="#">Tài khoản</a>
                 </li>
               </router-link>
-              <router-link
-                v-show="!isLoggedIn"
-                :to="{ name: 'signin' }"
-                class="router-css router-li"
-              >
+              <router-link v-show="!isLoggedIn" :to="{ name: 'signin' }" class="router-css router-li">
                 <li>
                   <a class="dropdown-item" href="#">Đăng nhập</a>
                 </li>
               </router-link>
-              <router-link
-                v-show="!isLoggedIn"
-                :to="{ name: 'signup' }"
-                class="router-css router-li"
-              >
+              <router-link v-show="!isLoggedIn" :to="{ name: 'signup' }" class="router-css router-li">
                 <li>
                   <a class="dropdown-item" href="#">Đăng ký</a>
                 </li>
@@ -102,10 +70,7 @@
           <a class="navbar-brand mt-2 mt-lg-0 d-none d-md-block" href="/">
             <img
               src="https://img.lovepik.com/png/20231014/cartoon-brown-library-clipart-estate-zone-exterior_199009_wh1200.png"
-              height="80"
-              alt="MDB Logo"
-              loading="lazy"
-            />
+              height="80" alt="MDB Logo" loading="lazy" />
           </a>
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -148,30 +113,47 @@
 </template>
 
 <script>
-import { ref, onMounted, watchEffect, computed } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
-import { useAuthStore } from "@/stores/auth.js";
-import { useCartStore } from "@/stores/cart.js";
+import ProductService from "@/services/product.service";
+ // Đảm bảo import ProductService từ đúng đường dẫn
+
 export default {
   setup() {
-    const authStore = useAuthStore();
-    const cart = useCartStore();
-    const isLoggedIn = computed(() => authStore.isUserLoggedIn);
-    const userId = computed(() => authStore.userId);
-    const totalQuantity = computed(() => cart.totalQuantity);
+    const router = useRouter();
+
+    // Trạng thái để lưu từ khóa tìm kiếm
+    const searchKeyword = ref("");
+
+    // Dùng để lưu kết quả tìm kiếm
+    const searchResult = ref([]);
+
+    // Phương thức xử lý tìm kiếm sách dựa trên từ khóa
+    const searchBooks = async () => {
+      try {
+        const response = await ProductService.findProductWithName(searchKeyword.value);
+        searchResult.value = response.data; // Giả sử API trả về một đối tượng có trường "data" chứa dữ liệu sản phẩm
+      } catch (error) {
+        console.error("Error searching books:", error);
+      }
+    };
+
     return {
-      isLoggedIn,
-      userId,
-      totalQuantity,
+      searchKeyword,
+      searchResult,
+      searchBooks,
     };
   },
 };
+
 </script>
+
 
 <style>
 body {
   margin: 0 0 !important;
 }
+
 .router-css {
   text-decoration: none;
 }
@@ -183,7 +165,8 @@ body {
 .header {
   height: 80px;
   background-color: #fff;
-  position: -webkit-sticky; /* Dành cho trình duyệt Safari */
+  position: -webkit-sticky;
+  /* Dành cho trình duyệt Safari */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -207,12 +190,15 @@ body {
   border: none;
   padding: 4px;
 }
+
 .d-flex.align-items-center {
-  order: 2; /* Thay đổi thứ tự cho máy tính */
+  order: 2;
+  /* Thay đổi thứ tự cho máy tính */
 }
 
 .collapse.navbar-collapse {
-  order: 1; /* Thay đổi thứ tự cho máy tính */
+  order: 1;
+  /* Thay đổi thứ tự cho máy tính */
 }
 
 @media only screen and (max-width: 599px) {

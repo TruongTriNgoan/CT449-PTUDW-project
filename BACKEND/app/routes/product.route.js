@@ -36,4 +36,8 @@ router
   )
   .delete(authentication.authenticateJWT, product.delete);
 
+  // router
+  // .route("/search/:nameproduct")
+  // .get(product.findProductWithName);
+
 module.exports = router;
