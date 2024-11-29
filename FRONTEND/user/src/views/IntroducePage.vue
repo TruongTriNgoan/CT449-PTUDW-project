@@ -1,40 +1,92 @@
 <template>
-  <div class="page">
-    <h1 class="bd-title d-flex justify-content-center mt-4" style="font-weight: 600">
-      GIỚI THIỆU
-    </h1>
-    <div class="container my-5">
-      <div class="row featurette d-flex justify-content-center align-items-center">
-        <div class="col-md-7">
-          <p class="lead">
-            Một thư viện là một kho sưu tập các nguồn thông tin, được chọn lựa bởi các chuyên gia và có thể được tiếp
-            cận để tham khảo hay mượn, thường là trong một môi trường yên tĩnh phù hợp cho học tập. Kho tàng của một thư
-            viên có thể chứa đến hàng triệu đầu mục, bao gồm nhiều định dạng như sách, ấn phẩm định kỳ, báo, thủ bản,
-            phim, bản đồ, bản in, văn kiện, CD, cassette, băng video, DVD, đĩa Blu-ray, sách điện tử, sách nói, cơ sỏ dữ
-            liệu, video game và các thể loại khác.
-            <br><br>
+  <div class="page" style="position: relative; overflow: hidden;">
+    <!-- Ảnh nền -->
+    <div class="background-image"></div>
 
-            Một thư viện được xây dựng và bảo quản bởi một cơ quan nhà nước, một tổ chức, một công ty, hoặc một cá nhân.
-            Ngoài việc cung cấp tài liệu, thư viện còn được phục vụ bởi các thủ thư, những chuyên gia trong việc tìm
-            kiếm và sắp xếp thông tin và đáp ứng nhu cầu của người dùng. Thư viện cũng thường có khu vực yên tĩnh để học
-            tập, và những khu vực hỗ trợ học và làm việc nhóm. Nhiều thư viện có cơ sở thiết bị có thể truy cập kho tài
-            liệu số và mạng Internet.
-            <br><br>
-
-            Thư viện hiện đại đang ngày càng được hướng đến trở thành nơi tiếp cận thông tin và kiến thức không giới hạn
-            qua nhiều hình thức và nguồn khác nhau. Thư viện ngày càng trở thành những trung tâm cộng đồng nơi thực hiện
-            các chương trình công cộng và hỗ trợ mọi người có thể học tập suốt đời.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <img
-            src="https://th.bing.com/th/id/OIP.rSAzW-6MnDYh9rLekoJMoQHaDt?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
-            alt="" />
-        </div>
+    <!-- Nội dung chính -->
+    <div class="content-wrapper">
+      <h1 class="title">GIỚI THIỆU</h1>
+      <div class="text-container">
+        <p class="lead">
+          Du lịch Việt Nam được xác định là một ngành kinh tế mũi nhọn vì cho rằng đất nước Việt Nam có tiềm năng du lịch đa dạng và phong phú. 
+          Năm 2019, ngành Du lịch Việt Nam lập kỳ tích lần đầu tiên đón 18 triệu lượt khách quốc tế, tăng 16,2% so với năm 2018. 
+          Giai đoạn từ 2015-2019, lượng khách quốc tế đến Việt Nam đã tăng 2,3 lần từ 7,9 triệu lượt lên 18 triệu lượt, tốc độ tăng trưởng 
+          bình quân đạt 22,7% mỗi năm. Việt Nam liên tục nằm trong nhóm những quốc gia có tốc độ tăng trưởng khách du lịch nhanh nhất thế giới. 
+          Năm 2019, du lịch Việt Nam nhận giải thưởng Điểm đến di sản hàng đầu thế giới do World Travel Awards trao tặng, Điểm đến Golf tốt nhất thế giới 
+          do World Golf Awards trao tặng. Cùng với đó, World Travel Awards cũng vinh danh Việt Nam là Điểm đến hàng đầu châu Á 2 năm liên tiếp 2018-2019, 
+          Điểm đến văn hóa hàng đầu châu Á 2019, Điểm đến ẩm thực hàng đầu châu Á 2019.
+          <br /><br />
+          Tuy nhiên, ngành du lịch Việt Nam có những hạn chế như tỷ lệ khách quay trở lại thấp. Chi tiêu của khách du lịch quốc tế tại Việt Nam không cao, 
+          trung bình hơn 1.000 USD cho một chuyến 9 ngày do sản phẩm du lịch của Việt Nam chưa hấp dẫn, thiếu gắn kết, các hoạt động giải trí, mua sắm, 
+          chăm sóc khách chưa đa dạng, công tác xúc tiến quảng bá chưa thực sự hiệu quả do hạn chế về nguồn lực, cơ chế vận hành, chưa thành lập Văn phòng 
+          xúc tiến du lịch ở nước ngoài, Quỹ hỗ trợ và phát triển du lịch chưa được vận hành và đi vào hoạt động; hạ tầng sân bay có xu hướng quá tải, 
+          chưa đáp ứng được tốc độ tăng trưởng cao về số lượng khách du lịch; chính sách thị thực nhập cảnh còn hạn chế so với các điểm đến cạnh tranh 
+          trực tiếp của du lịch Việt Nam như Thái Lan.
+        </p>
       </div>
-
-      <hr class="featurette-divider" />
     </div>
   </div>
 </template>
+
+<style scoped>
+
+.page {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.truyenhinhdulich.vn/upload/news/344_10_dia_danh_du_lich_nuc_tieng_o_yen_bai.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px 30px;
+  z-index: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.text-container {
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    max-width: 95%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .text-container {
+    font-size: 1rem;
+  }
+}
+</style>

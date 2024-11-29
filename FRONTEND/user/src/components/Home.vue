@@ -68,7 +68,7 @@
   <div class="container">
     <div class="col-12 col-sm-10 contain-product">
       <h1 class="text-center mt-2" style="font-weight: 600">
-        Sách nổi bật
+        Tour nổi bật
       </h1>
       <div class="container">
         <div class="row mt-n5">

@@ -43,7 +43,7 @@ export default {
         const response = await productService.create(formData);
         // console.log(data);
         // console.log(response);
-        alert("Thêm sản phẩm thành công");
+        alert("Thêm tour thành công");
         router.push({ name: "home" });
       } catch (error) {
         console.log(error);

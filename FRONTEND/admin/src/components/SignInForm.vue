@@ -1,5 +1,5 @@
 <template>
-  <div class="form-container" style="background-image: url(https://th.bing.com/th/id/OIP.ggFzJR_5oVouGpl-C1tyHAHaFj?rs=1&pid=ImgDetMain);">
+  <div class="form-container" style="background-image: url(https://iit.com.vn/files/images/Article/5-dieu-can-biet-khi-thiet-ke-website-du-lich.jpg);">
     <form @submit="submitSignIn">
       <h1 class="text-center mb-4" style="font-weight: 600">Đăng nhập</h1>
       <!-- Email input -->
@@ -93,7 +93,7 @@ export default {
 </script>
 <style scoped>
 body {
-  background-image: url("https://images5.alphacoders.com/423/thumb-1920-423529.jpg");
+  background-image: url("https://iit.com.vn/files/images/Article/5-dieu-can-biet-khi-thiet-ke-website-du-lich.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

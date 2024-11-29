@@ -85,14 +85,9 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan="2">Tổng sản phẩm</td>
+                  <td colspan="2">Tổng số tour</td>
                   <td class="text-end">{{ bill.totalOrder }}</td>
                 </tr>
-                <tr>
-                  <td colspan="2">Phí vận chuyển</td>
-                  <td class="text-end">Free</td>
-                </tr>
-
                 <tr class="fw-bold">
                   <td colspan="2">Tổng tiền</td>
                   <td class="text-end">{{ formatPriceVND(bill.totalCost) }}</td>
@@ -116,7 +111,7 @@
                 >
                   <div>
                     <h5 class="mb-0" style="font-weight: 600">
-                      Trạng thái đơn hàng
+                      Trạng thái tour
                     </h5>
                   </div>
                 </div>
@@ -142,7 +137,7 @@
                 <div class="d-flex justify-content-between">
                   <div class="d-lg-flex align-items-center ms-2">
                     <i
-                      class="fas fa-clipboard-list fa-3x me-lg-4 mb-3 mb-lg-0"
+                      class="fa-solid fa-hourglass-start fa-3x me-lg-4 mb-3 mb-lg-0"
                     ></i>
                     <div>
                       <p class="fw-bold mb-1">Đã đặt</p>
@@ -152,16 +147,16 @@
 
                   <div class="d-lg-flex align-items-center ms-2">
                     <i
-                      class="fas fa-shipping-fast fa-3x me-lg-4 mb-3 mb-lg-0"
+                      class="fa-solid fa-person-running fa-3x me-lg-4 mb-3 mb-lg-0"
                     ></i>
                     <div>
-                      <p class="fw-bold mb-1 ms-1">Đang giao</p>
+                      <p class="fw-bold mb-1 ms-1">Đang trong tour</p>
                     </div>
                   </div>
                   <div class="d-lg-flex align-items-center ms-2">
-                    <i class="fas fa-home fa-3x me-lg-4 mb-3 mb-lg-0"></i>
+                    <i class="fa-solid fa-flag-checkered fa-3x me-lg-4 mb-3 mb-lg-0"></i>
                     <div>
-                      <p class="fw-bold mb-1 ms-1">Đã nhận</p>
+                      <p class="fw-bold mb-1 ms-1">Đã kết thúc</p>
                     </div>
                   </div>
                 </div>
@@ -232,11 +227,11 @@ export default {
     const getStatusText = (status) => {
       switch (status) {
         case 1:
-          return "Đã đặt";
+          return "Đang đợi duyệt";
         case 2:
-          return "Đang giao";
+          return "Đang trong tour";
         case 3:
-          return "Đã nhận";
+          return "Đã kết thúc";
         default:
           return "Trạng thái không xác định";
       }

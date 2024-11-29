@@ -47,23 +47,15 @@
         <span class="text-success ms-2">In stock</span> -->
       </div>
 
-      <!-- <div class="mb-3">
-        <span style="color: red; font-size: 28px" class="h5">
-          {{
-            product.price ? formatPriceVND(product.price) : "Loading..."
-          }}</span
-        >
-      </div> -->
-
       <p>
         {{ product.productDes }}
       </p>
 
       <div class="row">
-        <dt class="col-3">Nhà xuất bản:</dt>
+        <dt class="col-3">Thời gian:</dt>
         <dd class="col-9">{{ product.trademark }}</dd>
 
-        <dt class="col-3">Đơn vị phát hành:</dt>
+        <dt class="col-3">Số lượng người:</dt>
         <dd class="col-9">{{ product.origin }}</dd>
       </div>
 
@@ -71,13 +63,13 @@
       <div class="row mb-2">
         <div class="col-md-4 col-6">
           <div class="row mt-4" style="margin-top: 32px !important">
-            <!-- <a
+            <a
               href="#"
               class="btn btn-dark shadow-0"
               @click="addToCart(product)"
             >
               <i class="me-1 fa fa-shopping-basket"></i> Thêm vào giỏ hàng
-            </a> -->
+            </a>
           </div>
         </div>
       </div>

@@ -12,7 +12,6 @@ const adminSchema = new Schema(
 );
 
 // Ma hoa mat khau
-
 adminSchema.pre("save", function (next) {
   const admin = this;
   if (!admin.isModified("password")) return next();

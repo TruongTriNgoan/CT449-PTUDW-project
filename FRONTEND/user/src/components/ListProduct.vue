@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-2 d-none d-md-block">
         <div id="sidebar">
-          <h3>Danh mục sản phẩm</h3>
+          <h3>Danh mục dịch vụ</h3>
           <div
             class="checklist categories"
             v-for="(category, index) in categories"
@@ -59,12 +59,12 @@
 
                 <div class="blog-grid-text p-4">
                   <h3 class="h5 mb-3">
-                    <p style="font-size: 18px; font-weight: 500">
+                    <p style="font-size: 18px; font-weight: 500; height: 50px;">
                       {{ product.productName }}
                     </p>
                   </h3>
                   <div class="row">
-                    <!-- <p
+                    <p
                       class="col-8"
                       style="
                         font-weight: 600;
@@ -74,8 +74,8 @@
                       "
                     >
                       {{ formatPriceVND(product.price) }}
-                    </p> -->
-                    <!-- <a
+                    </p>
+                    <a
                       class="col-4"
                       style="
                         font-size: 24px;
@@ -88,7 +88,7 @@
                       href="#"
                     >
                       <i class="fa-solid fa-cart-plus"></i>
-                    </a> -->
+                    </a>
                   </div>
                 </div>
               </div>

@@ -2,7 +2,7 @@
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid px-4">
-        <h1 class="mt-4" style="font-weight: 600">Danh sách quyển sách</h1>
+        <h1 class="mt-4" style="font-weight: 600">Danh sách tour</h1>
         <ol class="breadcrumb mb-4">
           <button type="button" class="btn btn-dark">
             <router-link :to="{ name: 'add-product' }" class="router-css">
@@ -20,12 +20,12 @@
               <thead class="table-light">
                 <tr>
                   <th>STT</th>
-                  <th>Tên sản phẩm</th>
+                  <th>Tên tour</th>
                   <th>Hình ảnh</th>
-                  <!-- <th>Số lượng</th> -->
-                  <th>Nhà xuất bản</th>
-                  <th>Đơn vị phát hành</th>
-                  <th>Trạng thái</th>
+                  <th>Giá</th>
+                  <th>Thời gian</th>
+                  <th>Số lượng người</th>
+                  <!-- <th>Trạng thái</th> -->
                   <th></th>
                 </tr>
               </thead>
@@ -35,18 +35,16 @@
                   <td>{{ product.productName }}</td>
                   <td>
                     <img
-                      :src="
-                        'http://localhost:3000/uploads/' + product.productImg[0]
-                      "
+                      :src="'http://localhost:3000/uploads/' + product.productImg[0]"
                       alt="Hình ảnh"
                       width="50"
                       height="50"
                     />
                   </td>
-                  <!-- <td>{{  }}</td> -->
+                  <td>{{ formatPriceVND(product.price) }}</td>
                   <td>{{ product.trademark }}</td>
                   <td>{{ product.origin }}</td>
-                  <td>{{ product.soldOut ? "Hết" : "Còn" }}</td>
+                  <!-- <td>{{ product.soldOut ? "Hết" : "Còn" }}</td> -->
                   <td>
                     <router-link
                       :to="{
@@ -91,19 +89,19 @@ export default {
         const response = await productService.findAll();
         products.value = response;
       } catch (error) {
-        console.error("Lỗi khi lấy danh sách sản phẩm:", error);
+        console.error("Lỗi khi lấy danh sách tour:", error);
       }
     };
 
     const confirmDeleteProduct = async (productId, productName) => {
       const shouldDelete = window.confirm(
-        `Bạn có chắc muốn xóa sản phẩm "${productName}" không?`
+        `Bạn có chắc muốn xóa tour "${productName}" này không?`
       );
 
       if (shouldDelete) {
         try {
           const response = await productService.delete(productId);
-          alert("Xóa sản phẩm thành công!");
+          alert("Xóa tour thành công!");
           const responseP = await productService.findAll();
           products.value = responseP;
         } catch (error) {

@@ -113,16 +113,16 @@
             </div>
           </div>
 
-          <h2 style="font-weight: 600">Đơn hàng</h2>
+          <h2 style="font-weight: 600">Các tour đã đặt</h2>
           <div id="scroll-container" class="card-body">
             <table class="table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Mã phiếu mượn</th>
-                  <th scope="col">Ngày mượn</th>
-                  <th scope="col">Ngày trả</th>
+                  <th scope="col">Mã tour</th>
+                  <th scope="col">Giá</th>
                   <th scope="col">Trạng thái</th>
+                  <th scope="col">Thời gian</th>
                   <th></th>
                   <th></th>
                 </tr>
@@ -209,11 +209,11 @@ export default {
     const getStatusText = (status) => {
       switch (status) {
         case 1:
-          return "Đang xử lý";
+          return "Đang đợi duyệt";
         case 2:
-          return "Đang giao";
+          return "Đang trong tour";
         case 3:
-          return "Đã nhận";
+          return "Đã kết thúc";
         default:
           return "Trạng thái không xác định";
       }

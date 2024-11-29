@@ -2,7 +2,7 @@
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid px-4">
-        <h2 style="font-weight: 600" class="mt-4">Cập nhật sách</h2>
+        <h2 style="font-weight: 600" class="mt-4">Cập nhật tour</h2>
 
         <div class="card mb-4"></div>
         <div class="container-fluid">
@@ -14,7 +14,7 @@
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="productName"
-                    >Tên sách</label
+                    >Tên tour</label
                   >
                   <input
                     type="text"
@@ -31,7 +31,7 @@
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="productDescription"
-                    >Mô tả sách</label
+                    >Mô tả</label
                   >
                   <input
                     type="text"
@@ -50,7 +50,7 @@
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="productCategory"
-                    >Danh mục sách</label
+                    >Danh mục tour</label
                   >
 
                   <select
@@ -79,7 +79,7 @@
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="productImage"
-                    >Hình ảnh sách</label
+                    >Hình ảnh</label
                   >
                   <input
                     type="file"
@@ -95,7 +95,7 @@
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
-                  <label class="form-label" for="productPrice">Số lượng</label>
+                  <label class="form-label" for="productPrice">Giá</label>
                   <input
                     type="text"
                     id="productPrice"
@@ -109,7 +109,7 @@
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="productBrand"
-                    >Nhà xuất bản</label
+                    >Thời gian</label
                   >
                   <input
                     type="text"
@@ -125,7 +125,7 @@
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
-                  <label class="form-label" for="productOrigin">Đơn vị phát hành</label>
+                  <label class="form-label" for="productOrigin">Số lượng người</label>
                   <input
                     type="text"
                     id="productOrigin"
@@ -154,10 +154,10 @@ import { ref, toRefs, computed } from "vue";
 import * as yup from "yup";
 // Định nghĩa schema validation
 const schema = yup.object().shape({
-  productName: yup.string().required("Tên sản phẩm không được để trống"),
-  productDes: yup.string().required("Mô tả sản phẩm không được để trống"),
-  categoryId: yup.string().required("Danh mục sản phẩm không được để trống"),
-  price: yup.number().typeError("Giá sản phẩm không được để trống").nullable(),
+  productName: yup.string().required("Tên không được để trống"),
+  productDes: yup.string().required("Mô tả không được để trống"),
+  categoryId: yup.string().required("Danh mục không được để trống"),
+  price: yup.number().typeError("Giá không được để trống").nullable(),
   trademark: yup.string().required("Thương hiệu không được để trống"),
   origin: yup.string().required("Xuất xứ không được để trống"),
 });
@@ -190,7 +190,7 @@ export default {
       }
     };
     const submitUpdateProduct = (event) => {
-      event.preventDefault();
+      // event.preventDefault();
       productNameError.value = null;
       productDesError.value = null;
       categoryIdError.value = null;

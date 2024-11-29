@@ -9,7 +9,7 @@
               <div class="sb-nav-link-icon">
                 <i class="fa-solid fa-square-caret-down"></i>
               </div>
-              Danh mục sách
+              Danh mục tour
             </a>
           </router-link>
 
@@ -18,7 +18,7 @@
               <div class="sb-nav-link-icon">
                 <i class="fa-brands fa-product-hunt"></i>
               </div>
-              Danh sách quyển sách
+              Danh sách tour
             </a>
           </router-link>
 
@@ -27,7 +27,7 @@
               <div class="sb-nav-link-icon">
                 <i class="fa-solid fa-file-invoice"></i>
               </div>
-              Danh sách phiếu mượn trả
+              Danh sách tour đã được đặt
             </a>
           </router-link>
 

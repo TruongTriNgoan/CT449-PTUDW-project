@@ -2,7 +2,7 @@
   <div id="layoutSidenav_content">
     <main>
       <div class="container-fluid px-4">
-        <h1 class="mt-4" style="font-weight: 600">Danh mục sách</h1>
+        <h1 class="mt-4" style="font-weight: 600">Danh mục tour</h1>
         <ol class="breadcrumb mb-4">
           <button type="button" class="btn btn-dark">
             <router-link :to="{ name: 'add-category' }" class="router-css">
@@ -72,7 +72,7 @@ export default {
 
     const confirmDeleteCategory = async (categoryId, categoryName) => {
       const shouldDelete = window.confirm(
-        `Bạn có chắc muốn xóa danh mục "${categoryName}" không?`
+        `Bạn có chắc muốn xóa danh mục "${categoryName}" này không?`
       );
       if (shouldDelete) {
         try {

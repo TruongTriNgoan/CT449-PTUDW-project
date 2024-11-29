@@ -10,7 +10,7 @@
                   <h5 class="mb-3">
                     <router-link :to="{ name: 'product' }" class="router-css">
                       <i class="fas fa-long-arrow-alt-left me-2"></i>Tiếp tục
-                      mua sắm</router-link
+                      chọn tour</router-link
                     >
                   </h5>
                   <hr />
@@ -19,9 +19,9 @@
                     class="d-flex justify-content-between align-items-center mb-4"
                   >
                     <div>
-                      <h4 style="font-weight: 600" class="mb-1">Giỏ hàng</h4>
+                      <h4 style="font-weight: 600" class="mb-1">Danh sách</h4>
                       <p class="mb-0">
-                        Giỏ hàng của bạn có {{ totalQuantity }} sản phẩm
+                        Danh sách của bạn có {{ totalQuantity }} tour muốn đặt
                       </p>
                     </div>
                     <div>
@@ -141,7 +141,7 @@
 
                         <div class="form-outline form-white mb-4">
                           <label class="form-label" for="typeName"
-                            >Hình thức thanh toán: Thanh toán khi nhận hàng
+                            >Hình thức thanh toán:
                           </label>
                         </div>
                       </form>
@@ -151,11 +151,6 @@
                       <div class="d-flex justify-content-between">
                         <p class="mb-2">Tổng số lượng</p>
                         <p class="mb-2">{{ totalQuantity }}</p>
-                      </div>
-
-                      <div class="d-flex justify-content-between">
-                        <p class="mb-2">Phí vận chuyển</p>
-                        <p class="mb-2">Free</p>
                       </div>
 
                       <div class="d-flex justify-content-between mb-4">

@@ -4,6 +4,7 @@ const Joi = require("joi");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const jwtSecret = "mysecretkey";
+
 exports.signUp = async (req, res, next) => {
   try {
     const schema = Joi.object({
